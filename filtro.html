@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seleção de Ingredientes</title>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Escolha os ingredientes</h2>
+    <form id="form-ingredientes">
+      <label>Legumes:</label>
+      <select id="legumes" multiple>
+        <option value="cenoura">Cenoura</option>
+        <option value="batata">Batata</option>
+        <option value="abóbora">Abóbora</option>
+      </select>
+
+      <label>Verduras:</label>
+      <select id="verduras" multiple>
+        <option value="alface">Alface</option>
+        <option value="espinafre">Espinafre</option>
+        <option value="couve">Couve</option>
+      </select>
+
+      <label>Ingredientes diversos:</label>
+      <select id="diversos" multiple>
+        <option value="arroz">Arroz</option>
+        <option value="feijão">Feijão</option>
+        <option value="frango">Frango</option>
+        <option value="ovos">Ovos</option>
+      </select>
+
+      <button type="submit">Buscar Receitas</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#legumes, #verduras, #diversos').select2({
+        width: '100%',
+        placeholder: 'Selecione'
+      });
+
+      $('#form-ingredientes').on('submit', function(e) {
+        e.preventDefault();
+
+        const legumes = $('#legumes').val() || [];
+        const verduras = $('#verduras').val() || [];
+        const diversos = $('#diversos').val() || [];
+
+        const selecionados = [...legumes, ...verduras, ...diversos];
+
+        localStorage.setItem('ingredientesSelecionados', JSON.stringify(selecionados));
+
+        window.location.href = 'receitas.html';
+      });
+    });
+  </script>
+</body>
+</html>

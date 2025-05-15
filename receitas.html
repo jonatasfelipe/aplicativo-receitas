@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Receitas com Ingredientes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <style>
+    .receita {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .receita h3 {
+      margin-top: 0;
+    }
+    .mensagem {
+      font-style: italic;
+      color: #777;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="titulo"></h2>
+
+    <label for="ingredientes">Escolha entre os ingredientes selecionados:</label>
+    <select id="ingredientes" multiple style="width: 100%"></select>
+
+    <div id="resultado" class="mensagem">Selecione ao menos um ingrediente para ver as receitas.</div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    const nome = localStorage.getItem('usuario_nome') || 'Usuário';
+    const ingredientesSelecionados = JSON.parse(localStorage.getItem('ingredientesSelecionados')) || [];
+    const titulo = document.getElementById('titulo');
+    const selectIngredientes = $('#ingredientes');
+    const resultadoDiv = document.getElementById('resultado');
+
+    titulo.innerText = `Olá, ${nome}! Refine sua busca pelas receitas:`;
+
+    // Preenche os ingredientes no select
+    ingredientesSelecionados.forEach(item => {
+      const option = new Option(item, item, false, false);
+      selectIngredientes.append(option);
+    });
+
+    // Inicializa Select2
+    selectIngredientes.select2({
+      placeholder: 'Selecione os ingredientes',
+      width: '100%'
+    });
+
+    // Função para carregar e filtrar receitas
+    function filtrarReceitas() {
+      const selecionados = selectIngredientes.val();
+
+      if (!selecionados || selecionados.length === 0) {
+        resultadoDiv.innerHTML = '<p class="mensagem">Selecione ao menos um ingrediente para ver as receitas.</p>';
+        return;
+      }
+
+      fetch('receitas.json')
+        .then(res => res.json())
+        .then(receitas => {
+          const filtradas = receitas.filter(receita =>
+            selecionados.every(ing => receita.ingredientes.includes(ing))
+          );
+
+          resultadoDiv.innerHTML = '';
+
+          if (filtradas.length === 0) {
+            resultadoDiv.innerHTML = '<p>Nenhuma receita encontrada com os ingredientes escolhidos.</p>';
+            return;
+          }
+
+          filtradas.forEach(receita => {
+            const card = document.createElement('div');
+            card.className = 'receita';
+            card.innerHTML = `
+              <h3>${receita.nome}</h3>
+              <p><strong>Ingredientes:</strong> ${receita.ingredientes.join(', ')}</p>
+              <p><strong>Modo de Preparo:</strong> ${receita.modo_preparo}</p>
+              <p><strong>Tempo de Preparo:</strong> ${receita.tempo_preparo}</p>
+            `;
+            resultadoDiv.appendChild(card);
+          });
+        });
+    }
+
+    // Atualiza dinamicamente ao selecionar ingredientes
+    selectIngredientes.on('change', filtrarReceitas);
+
+    // Exibe a mensagem inicial
+    filtrarReceitas();
+  </script>
+</body>
+</html>

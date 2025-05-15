@@ -1,57 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filtrar Receitas</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Select2 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meu Rango</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Escolha os Ingredientes</h1>
-    <form id="filtro-form">
-        <div style="margin-bottom: 15px;">
-          <label for="legumes">Legumes:</label>
-          <select id="legumes" multiple>
-            <option value="cenoura">Cenoura</option>
-            <option value="batata">Batata</option>
-            <option value="abobrinha">Abobrinha</option>
-          </select>
-        </div>
-      
-        <div style="margin-bottom: 15px;">
-          <label for="verduras">Verduras:</label>
-          <select id="verduras" multiple>
-            <option value="alface">Alface</option>
-            <option value="couve">Couve</option>
-            <option value="espinafre">Espinafre</option>
-          </select>
-        </div>
-      
-        <div style="margin-bottom: 15px;">
-          <label for="diversos">Ingredientes Diversos:</label>
-          <select id="diversos" multiple>
-            <option value="arroz">Arroz</option>
-            <option value="ovo">Ovo</option>
-            <option value="queijo">Queijo</option>
-          </select>
-        </div>
-      
-        <button type="button" id="btn-limpar">Limpar</button>
+    <div class="container">
+      <h1>Meu Rango</h1>
+      <p>Descubra receitas com os ingredientes que você já tem!</p>
+
+      <form id="form-nome">
+        <label for="nome">Digite seu nome:</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Ex: Ana Maria"
+          required
+        />
+        <button type="submit">Entrar</button>
       </form>
-      
+    </div>
 
-    <h2>Receitas Encontradas:</h2>
-    <div id="resultado"></div>
-
-    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("form-nome")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const nome = document.getElementById("nome").value.trim();
+          if (nome) {
+            localStorage.setItem("usuario_nome", nome);
+            window.location.href = "filtro.html";
+          }
+        });
+    </script>
   </body>
 </html>
