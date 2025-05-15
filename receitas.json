@@ -1,0 +1,87 @@
+[
+    {
+      "nome": "Salada de Alface com Cenoura",
+      "ingredientes": ["alface", "cenoura"],
+      "modo_preparo": "Lave bem os ingredientes, rale a cenoura e misture com as folhas de alface. Tempere a gosto.",
+      "tempo_preparo": "10 minutos"
+    },
+    {
+      "nome": "Sopa de Batata com Couve",
+      "ingredientes": ["batata", "couve"],
+      "modo_preparo": "Cozinhe as batatas até ficarem macias. Adicione a couve picada e cozinhe por mais 5 minutos. Tempere com sal e pimenta.",
+      "tempo_preparo": "30 minutos"
+    },
+    {
+      "nome": "Arroz com Ovo e Espinafre",
+      "ingredientes": ["arroz", "ovo", "espinafre"],
+      "modo_preparo": "Cozinhe o arroz normalmente. Refogue os ovos mexidos com espinafre picado e misture ao arroz.",
+      "tempo_preparo": "25 minutos"
+    },
+    {
+      "nome": "Abobrinha Recheada com Queijo",
+      "ingredientes": ["abobrinha", "queijo"],
+      "modo_preparo": "Corte a abobrinha ao meio, retire o miolo e recheie com queijo. Leve ao forno até dourar.",
+      "tempo_preparo": "35 minutos"
+    },
+    {
+        "nome": "Omelete com Espinafre e Queijo",
+        "ingredientes": ["ovo", "espinafre", "queijo"],
+        "modo_preparo": "Bata os ovos, adicione espinafre picado e queijo ralado. Cozinhe em uma frigideira antiaderente até dourar.",
+        "tempo_preparo": "15 minutos"
+      },
+      {
+        "nome": "Arroz à Grega",
+        "ingredientes": ["arroz", "cenoura", "ervilha"],
+        "modo_preparo": "Cozinhe o arroz com cenoura ralada e ervilhas. Tempere a gosto.",
+        "tempo_preparo": "25 minutos"
+      },
+      {
+        "nome": "Batata Assada com Queijo",
+        "ingredientes": ["batata", "queijo"],
+        "modo_preparo": "Corte as batatas em rodelas, adicione queijo por cima e leve ao forno até gratinar.",
+        "tempo_preparo": "40 minutos"
+      },
+      {
+        "nome": "Sopa de Abobrinha e Cenoura",
+        "ingredientes": ["abobrinha", "cenoura"],
+        "modo_preparo": "Cozinhe abobrinha e cenoura picadas até ficarem macias. Bata no liquidificador e volte à panela. Tempere e sirva quente.",
+        "tempo_preparo": "30 minutos"
+      },
+      {
+        "nome": "Refogado de Couve com Alho",
+        "ingredientes": ["couve"],
+        "modo_preparo": "Pique a couve e refogue com alho em uma frigideira. Tempere com sal.",
+        "tempo_preparo": "10 minutos"
+      },
+      {
+        "nome": "Panqueca de Alface com Ovo",
+        "ingredientes": ["alface", "ovo"],
+        "modo_preparo": "Bata ovos com alface picada e prepare como panquecas em uma frigideira.",
+        "tempo_preparo": "20 minutos"
+      },
+      {
+        "nome": "Arroz Colorido com Legumes",
+        "ingredientes": ["arroz", "cenoura", "abobrinha"],
+        "modo_preparo": "Cozinhe arroz com cenoura e abobrinha picadas. Acrescente temperos a gosto.",
+        "tempo_preparo": "30 minutos"
+      },
+      {
+        "nome": "Cenoura Glaceada",
+        "ingredientes": ["cenoura"],
+        "modo_preparo": "Cozinhe cenouras em rodelas com um pouco de manteiga e açúcar até ficarem brilhantes.",
+        "tempo_preparo": "20 minutos"
+      },
+      {
+        "nome": "Espinafre com Queijo ao Forno",
+        "ingredientes": ["espinafre", "queijo"],
+        "modo_preparo": "Refogue espinafre e coloque em uma travessa com queijo por cima. Leve ao forno até gratinar.",
+        "tempo_preparo": "25 minutos"
+      },
+      {
+        "nome": "Batata com Ovo Mexido",
+        "ingredientes": ["batata", "ovo"],
+        "modo_preparo": "Cozinhe batatas em cubos e depois misture com ovos mexidos. Tempere a gosto.",
+        "tempo_preparo": "30 minutos"
+      }
+  ]
+  

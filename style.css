@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f8f8f8;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    margin: 10px 20px 10px 0;
+    padding: 5px;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+  }
+  
+  #btn-limpar {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 4px;
+  }
+  
+  #btn-limpar:hover {
+    background-color: #c0392b;
+  }
+  
+  select[multiple] {
+    height: 100px;
+    width: 200px;
+  }
+  
+  #resultado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .receita {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    width: 300px;
+    transition: transform 0.2s;
+  }
+  
+  .receita:hover {
+    transform: scale(1.02);
+  }
+  
+  .receita h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .receita p {
+    margin: 6px 0;
+    color: #555;
+  }
+  
